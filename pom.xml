@@ -9,7 +9,7 @@
 
 	<name>JQuery Print Plugin</name>
 	<artifactId>webjar-jquery-print</artifactId>
-	<version>1.5.1-SNAPSHOT</version>
+	<version>1.5.1</version>
 	<description>JQuery print plugin.</description>
 
 	<properties>
@@ -33,10 +33,10 @@
 						<id>precompile</id>
 						<configuration>
 							<target>
-								<get src="${src.url}" dest="${src.zipdir}/src.zip"/>
+								<get src="${src.url}" dest="${src.zipdir}/src.zip" />
 								<unzip src="${src.zipdir}/src.zip" dest="${src.tmpdir}" />
 								<move todir="${webjar.target}">
-									<fileset dir="${src.rootdir}" includes="jQuery.print.js,README.md"/>
+									<fileset dir="${src.rootdir}" includes="jQuery.print.js,README.md" />
 								</move>
 							</target>
 						</configuration>
@@ -49,4 +49,8 @@
 			</plugin>
 		</plugins>
 	</build>
+
+  <scm>
+    <tag>1.5.1</tag>
+  </scm>
 </project>
