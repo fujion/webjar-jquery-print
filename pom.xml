@@ -9,7 +9,7 @@
 
 	<name>JQuery Print Plugin</name>
 	<artifactId>webjar-jquery-print</artifactId>
-	<version>1.5.1</version>
+	<version>1.5.1-1-SNAPSHOT</version>
 	<description>JQuery print plugin.</description>
 
 	<properties>
@@ -49,8 +49,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-  <scm>
-    <tag>1.5.1</tag>
-  </scm>
 </project>
