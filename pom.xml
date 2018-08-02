@@ -8,7 +8,7 @@
 	</parent>
 
 	<name>JQuery Print Plugin</name>
-	<artifactId>fujion-jquery-print</artifactId>
+	<artifactId>webjar-jquery-print</artifactId>
 	<version>1.5.1-SNAPSHOT</version>
 	<description>JQuery print plugin.</description>
 
