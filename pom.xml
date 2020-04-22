@@ -37,7 +37,7 @@
 								<get src="${src.url}" dest="${src.zipdir}/src.zip" />
 								<unzip src="${src.zipdir}/src.zip" dest="${src.tmpdir}" />
 								<move todir="${webjar.target}">
-									<fileset dir="${src.rootdir}" includes="jQuery.print.js,README.md" />
+									<fileset dir="${src.rootdir}" includes="jQuery.print.js,README.md,LICENSE" />
 								</move>
 							</target>
 						</configuration>
