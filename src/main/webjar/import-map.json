@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "jquery-print": "jQuery.print.js"
+  }
+}
