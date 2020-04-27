@@ -13,7 +13,6 @@
 	<description>JQuery print plugin.</description>
 
 	<properties>
-		<skip.minification>false</skip.minification>
 		<src.url>https://github.com/DoersGuild/jQuery.print/archive/${src.version}.zip</src.url>
 		<src.top>jQuery.print-${src.version}</src.top>
 	</properties>
@@ -29,9 +28,12 @@
 							<target>
 								<get src="${src.url}" dest="${src.zipdir}/src.zip" />
 								<unzip src="${src.zipdir}/src.zip" dest="${src.tmpdir}" />
-								<move todir="${webjar.target}">
-									<fileset dir="${src.rootdir}" includes="jQuery.print.js,README.md,LICENSE" />
-								</move>
+								<copy todir="${webjar.target}">
+									<fileset dir="${src.rootdir}" includes="dist/,README.md,LICENSE" />
+								</copy>
+								<copy todir="${webjar.target}/dist">
+									<fileset dir="${src.rootdir}" includes="jQuery.print.js" />
+								</copy>
 							</target>
 						</configuration>
 					</execution>

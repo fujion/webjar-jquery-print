@@ -1,5 +1,5 @@
 {
-  "imports": {
-    "jquery-print": "jQuery.print.js"
+  "paths": {
+    "jquery-print": "dist/jQuery.print.js"
   }
 }
