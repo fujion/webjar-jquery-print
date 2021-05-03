@@ -9,7 +9,7 @@
 
 	<name>JQuery Print Plugin</name>
 	<artifactId>webjar-jquery-print</artifactId>
-	<version>1.6.0-3</version>
+	<version>1.6.0-10</version>
 	<description>JQuery print plugin.</description>
 
 	<!-- Note: v1.6.0 has never been published to NPM. -->
