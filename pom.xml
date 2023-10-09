@@ -17,6 +17,7 @@
 	<properties>
 		<src.url>https://github.com/DoersGuild/jQuery.print/archive/${src.version}.zip</src.url>
 		<src.top>jQuery.print-${src.version}</src.top>
+		<npm-install.skip>true</npm-install.skip>
 	</properties>
 	
 	<build>
