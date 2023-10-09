@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>org.fujion.webjars</groupId>
 		<artifactId>fujion-webjars</artifactId>
-		<version>3.0.0</version>
+		<version>3.2.0-SNAPSHOT</version>
 	</parent>
 
 	<name>JQuery Print Plugin</name>
 	<artifactId>webjar-jquery-print</artifactId>
-	<version>1.6.0-10</version>
+	<version>1.6.0-11</version>
 	<description>JQuery print plugin.</description>
 
 	<!-- Note: v1.6.0 has never been published to NPM. -->
