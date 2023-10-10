@@ -9,7 +9,7 @@
 
 	<name>JQuery Print Plugin</name>
 	<artifactId>webjar-jquery-print</artifactId>
-	<version>1.6.0-11</version>
+	<version>1.6.2-SNAPSHOT</version>
 	<description>JQuery print plugin.</description>
 
 	<!-- Note: v1.6.0 has never been published to NPM. -->
@@ -19,9 +19,26 @@
 		<src.top>jQuery.print-${src.version}</src.top>
 		<npm-install.skip>true</npm-install.skip>
 	</properties>
-	
+
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.fujion.webjars</groupId>
+				<artifactId>webjar-validator-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>validate-webjar</id>
+						<configuration>
+							<rules>
+								<rule>file_exists import-map.json</rule>
+								<rule>file_exists README.md</rule>
+								<rule>file_contains LICENSE "Creative Commons Attribution 3.0"</rule>
+								<rule>file_exists dist/jQuery.print.js</rule>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
