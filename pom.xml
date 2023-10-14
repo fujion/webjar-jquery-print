@@ -15,9 +15,8 @@
 	<!-- Note: v1.6.0 has never been published to NPM. -->
 
 	<properties>
-		<src.url>https://github.com/DoersGuild/jQuery.print/archive/${src.version}.zip</src.url>
-		<src.top>jQuery.print-${src.version}</src.top>
-		<npm-install.skip>true</npm-install.skip>
+		<src.url>https://codeload.github.com/DoersGuild/jQuery.print/zip/refs/tags/${src.version}</src.url>
+		<npm-install.skip>false</npm-install.skip>
 	</properties>
 
 	<build>
@@ -46,13 +45,13 @@
 						<id>precompile</id>
 						<configuration>
 							<target>
-								<get src="${src.url}" dest="${src.zipdir}/src.zip" />
-								<unzip src="${src.zipdir}/src.zip" dest="${src.tmpdir}" />
-								<copy todir="${webjar.target}">
-									<fileset dir="${src.rootdir}" includes="dist/,README.md,LICENSE" />
-								</copy>
-								<copy todir="${webjar.target}/dist">
-									<fileset dir="${src.rootdir}" includes="jQuery.print.js" />
+								<get src="${src.url}" dest="${src.zipdir}/src.zip"/>
+								<unzip src="${src.zipdir}/src.zip" dest="${src.rootdir}"/>
+								<copy todir="${src.rootdir}">
+									<fileset dir="${basedir}/staging" />
+									<filterchain>
+										<expandproperties />
+									</filterchain>
 								</copy>
 							</target>
 						</configuration>
