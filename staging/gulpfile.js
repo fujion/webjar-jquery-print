@@ -1,6 +1,6 @@
 const {src, dest, series} = require('gulp');
 
-const srcDir = '${src.rootdir}/jQuery.print-${version.unrevise}/';
+const srcDir = '${webjar.staging}/jQuery.print-${version.unrevise}/';
 const destDir = '${webjar.target}/';
 
 function task1() {
