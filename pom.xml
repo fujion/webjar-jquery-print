@@ -14,10 +14,6 @@
 
 	<!-- Note: v1.6.0 has never been published to NPM. -->
 
-	<properties>
-		<src.url>https://codeload.github.com/DoersGuild/jQuery.print/zip/refs/tags/${src.version}</src.url>
-	</properties>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -33,21 +29,6 @@
 								<rule>file_contains LICENSE "Creative Commons Attribution 3.0"</rule>
 								<rule>file_exists dist/jQuery.print.js</rule>
 							</rules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>precompile</id>
-						<configuration>
-							<target>
-								<mkdir dir="${webjar.staging}" />
-								<get src="${src.url}" dest="${webjar.staging}/src.zip"/>
-								<unzip src="${webjar.staging}/src.zip" dest="${webjar.staging}"/>
-							</target>
 						</configuration>
 					</execution>
 				</executions>

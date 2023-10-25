@@ -1,14 +1,26 @@
 const {src, dest, series} = require('gulp');
+const download = require("gulp-download-stream");
+const rename = require("gulp-rename");
+const unzip = require('gulp-unzip');
+const streamify = require('gulp-streamify');
 
-const srcDir = '${webjar.staging}/jQuery.print-${version.unrevise}/';
+
+const srcDir = '${webjar.staging}/src/';
 const destDir = '${webjar.target}/';
 
 function task1() {
-    return _copy(['LICENSE', '*.md']);
+    return download(`https://codeload.github.com/DoersGuild/jQuery.print/zip/refs/tags/${version.unrevise}`)
+        .pipe(streamify(unzip()))
+        .pipe(rename(path => path.dirname = './src'))
+        .pipe(dest('./'));
 }
 
 function task2() {
-    return _copy(['jQuery.print.js', 'dist/jQuery.print.min.js'], 'dist');
+    return _copy(['LICENSE', '*.md']);
+}
+
+function task3() {
+    return _copy('jQuery.print*.js', 'dist');
 }
 
 function _toSrc(_src) {
@@ -24,4 +36,4 @@ function _copy(_src, _dest) {
     return _toSrc(_src).pipe(_toDest(_dest))
 }
 
-exports.default = series(task1, task2);
+exports.default = series(task1, task2, task3);
