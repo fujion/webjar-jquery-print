@@ -1,17 +1,14 @@
 const {src, dest, series} = require('gulp');
 const download = require("gulp-download-stream");
-const rename = require("gulp-rename");
 const unzip = require('gulp-unzip');
 const streamify = require('gulp-streamify');
 
-
-const srcDir = '${webjar.staging}/src/';
+const srcDir = '${webjar.staging}/jQuery.print-${version.unrevise}/';
 const destDir = '${webjar.target}/';
 
 function task1() {
     return download(`https://codeload.github.com/DoersGuild/jQuery.print/zip/refs/tags/${version.unrevise}`)
         .pipe(streamify(unzip()))
-        .pipe(rename(path => path.dirname = './src'))
         .pipe(dest('./'));
 }
 
